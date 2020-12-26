@@ -7,7 +7,21 @@ export default {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: '' },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'preconnect', href: 'https://fonts.gstatic.com' },
+      {
+        href:
+          'https://fonts.googleapis.com/css2?family=Gugi&family=Manrope:wght@400;700&family=Roboto+Slab:wght@400;700&display=swap',
+        rel: 'stylesheet',
+      },
+    ],
+    script: [
+      {
+        src: 'https://kit.fontawesome.com/4f83b214c6.js',
+        crossorigin: 'anonymous',
+      },
+    ],
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
@@ -25,6 +39,7 @@ export default {
     '@nuxtjs/eslint-module',
   ],
 
+  loading: false,
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [],
 
