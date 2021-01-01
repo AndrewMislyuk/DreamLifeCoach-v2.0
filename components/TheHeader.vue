@@ -50,6 +50,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import 'sass-rem/_rem.scss';
+
 .header {
   position: fixed;
   z-index: 1000;
@@ -60,14 +62,14 @@ export default {
   align-items: center;
   justify-content: space-between;
   background: rgba(65, 105, 184, 0.8);
-  padding: 25px 90px 25px 125px;
+  padding: rem(25px 90px 25px 125px);
 
   &__logo {
     font-family: Gugi;
     font-style: normal;
     font-weight: normal;
-    font-size: 26px;
-    line-height: 32px;
+    font-size: rem(26px);
+    line-height: rem(32px);
     color: #ffffff;
   }
 
@@ -77,10 +79,10 @@ export default {
       font-family: Manrope;
       font-style: normal;
       font-weight: normal;
-      font-size: 22px;
-      line-height: 30px;
+      font-size: rem(22px);
+      line-height: rem(30px);
       color: #ffffff;
-      margin-right: 35px;
+      margin-right: rem(35px);
 
       &:last-child {
         margin: 0;

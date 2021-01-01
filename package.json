@@ -16,7 +16,12 @@
     "fibers": "^5.0.0",
     "node-sass": "^5.0.0",
     "nuxt": "^2.14.6",
-    "sass-loader": "^10.1.0"
+    "nuxt-svg-loader": "^1.2.0",
+    "sass-loader": "^10.1.0",
+    "sass-rem": "^2.0.1",
+    "v-click-outside": "^3.1.2",
+    "vue-inputmask": "^0.2.1",
+    "vuelidate": "^0.7.6"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^3.1.0",

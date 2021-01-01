@@ -48,35 +48,37 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import 'sass-rem/_rem.scss';
+
 .info {
   width: 100%;
-  padding: 100px 0;
+  padding: rem(100px 0);
   background: #272e6d;
 
   &__title {
     font-family: Roboto Slab;
-    font-size: 76px;
-    line-height: 87px;
+    font-size: rem(76px);
+    line-height: rem(87px);
     font-weight: normal;
     color: #fff;
     text-align: center;
-    max-width: 650px;
+    max-width: rem(650px);
     margin: 0 auto;
-    padding-bottom: 10px;
-    border-bottom: 2px solid #e84545;
+    padding-bottom: rem(10px);
+    border-bottom: rem(2px) solid #e84545;
   }
 
   &__content {
-    margin-top: 100px;
+    margin-top: rem(100px);
     display: flex;
     justify-content: center;
     align-items: flex-start;
   }
 
   &__block {
-    max-width: 300px;
+    max-width: rem(300px);
     width: 100%;
-    margin-right: 75px;
+    margin-right: rem(75px);
     font-family: Manrope;
     font-weight: normal;
 
@@ -87,16 +89,26 @@ export default {
     &:hover {
       .info__block-icon {
         border-color: #e84545;
+        color: #e84545;
       }
     }
 
     &-icon {
-      border: 3px solid #fff;
-      width: 100px;
-      height: 100px;
-      margin: 0 auto 25px;
+      border: rem(3px) solid #fff;
+      color: #fff;
+      font-size: rem(60px);
+      width: rem(100px);
+      height: rem(100px);
+      margin: rem(0 auto 25px);
       border-radius: 50%;
       transition: all 0.2s linear;
+
+      .--icon-position {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: rem(20px);
+      }
     }
 
     &-title {
@@ -104,15 +116,15 @@ export default {
       text-transform: uppercase;
       font-weight: bold;
       color: #fff;
-      font-size: 20px;
-      line-height: 28px;
-      margin-bottom: 15px;
+      font-size: rem(20px);
+      line-height: rem(28px);
+      margin-bottom: rem(15px);
     }
 
     &-text {
       color: #e2e2e2;
-      font-size: 16px;
-      line-height: 20px;
+      font-size: rem(16px);
+      line-height: rem(20px);
       text-align: justify;
     }
   }

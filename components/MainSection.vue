@@ -49,10 +49,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import 'sass-rem/_rem.scss';
+
 .main {
-  max-width: 1920px;
+  max-width: rem(1920px);
   width: 100%;
-  height: 1000px;
+  height: rem(1000px);
   position: relative;
   margin: 0 auto;
   background: url(~@/assets/images/background.png) center no-repeat;
@@ -68,30 +70,30 @@ export default {
       rgba(236, 218, 201, 0.222) 0%,
       rgba(0, 0, 0, 0.6) 43.33%
     );
-    padding: 250px 0 75px;
+    padding: rem(250px 0 75px);
   }
 
   &__title {
     font-family: Roboto Slab;
-    font-size: 76px;
-    line-height: 87px;
+    font-size: rem(76px);
+    line-height: rem(87px);
     font-weight: normal;
     color: #ffffff;
     text-align: center;
   }
 
   &__suptitle {
-    margin: 30px 0;
+    margin: rem(30px 0);
     text-align: center;
     font-family: Manrope;
     font-weight: normal;
-    font-size: 24px;
-    line-height: 30px;
+    font-size: rem(24px);
+    line-height: rem(30px);
     color: #ffffff;
   }
 
   &__info {
-    margin: 150px 0 0 150px;
+    margin: rem(150px 0 0 150px);
   }
 
   &__list {
@@ -99,11 +101,11 @@ export default {
       position: relative;
       font-family: Manrope;
       font-weight: normal;
-      font-size: 20px;
-      line-height: 28px;
+      font-size: rem(20px);
+      line-height: rem(28px);
       color: #ffffff;
-      margin-bottom: 25px;
-      padding-left: 25px;
+      margin-bottom: rem(25px);
+      padding-left: rem(25px);
 
       &:last-child {
         margin-bottom: 0;
@@ -113,11 +115,11 @@ export default {
         content: '';
         position: absolute;
         top: 50%;
-        margin-top: -4px;
+        margin-top: rem(-4px);
         left: 0;
         background: #fff;
-        width: 10px;
-        height: 10px;
+        width: rem(10px);
+        height: rem(10px);
         border-radius: 50%;
       }
     }
@@ -128,12 +130,12 @@ export default {
     color: #fff;
     font-family: Manrope;
     font-weight: normal;
-    font-size: 24px;
-    line-height: 30px;
-    padding: 16px 50px;
-    border-radius: 32px;
-    max-width: 375px;
-    margin: 25px auto 0;
+    font-size: rem(24px);
+    line-height: rem(30px);
+    padding: rem(16px 50px);
+    border-radius: rem(32px);
+    max-width: rem(375px);
+    margin: rem(25px auto 0);
   }
 }
 </style>

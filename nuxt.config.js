@@ -28,7 +28,15 @@ export default {
   css: [],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
-  plugins: [],
+  plugins: [
+    {
+      src: '~/plugins/vuelidate',
+    },
+    {
+      src: '~/plugins/vue-inputmask',
+      mode: 'client',
+    },
+  ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
   components: true,
@@ -41,7 +49,7 @@ export default {
 
   loading: false,
   // Modules (https://go.nuxtjs.dev/config-modules)
-  modules: [],
+  modules: ['nuxt-svg-loader'],
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {},

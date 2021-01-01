@@ -4,14 +4,22 @@
     <MainSection />
     <TeamSection />
     <InfoSection />
+    <ProgramsSection />
+    <PaymentsSection />
+    <ContactsSection />
+    <TheFooter />
   </div>
 </template>
 
 <script>
 import TheHeader from '@/components/TheHeader'
+import TheFooter from '@/components/TheFooter'
 import MainSection from '@/components/MainSection'
 import TeamSection from '@/components/TeamSection'
 import InfoSection from '@/components/InfoSection'
+import ProgramsSection from '@/components/ProgramsSection'
+import PaymentsSection from '@/components/PaymentsSection'
+import ContactsSection from '@/components/ContactsSection'
 
 export default {
   components: {
@@ -19,6 +27,10 @@ export default {
     MainSection,
     TeamSection,
     InfoSection,
+    ProgramsSection,
+    PaymentsSection,
+    ContactsSection,
+    TheFooter,
   },
 }
 </script>

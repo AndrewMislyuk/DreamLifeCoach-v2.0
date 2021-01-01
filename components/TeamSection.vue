@@ -40,33 +40,35 @@ export default {}
 </script>
 
 <style lang="scss" scoped>
+@import 'sass-rem/_rem.scss';
+
 .team {
   background: #fff;
   width: 100%;
-  padding: 100px 0;
+  padding: rem(100px 0);
 
   &__title {
     font-family: Roboto Slab;
-    font-size: 76px;
-    line-height: 87px;
+    font-size: rem(76px);
+    line-height: rem(87px);
     font-weight: normal;
     color: #333;
     text-align: center;
-    max-width: 225px;
+    max-width: rem(225px);
     margin: 0 auto;
-    padding-bottom: 10px;
-    border-bottom: 2px solid #fea12b;
+    padding-bottom: rem(10px);
+    border-bottom: rem(2px) solid #fea12b;
   }
 
   &__content {
-    margin-top: 100px;
+    margin-top: rem(100px);
   }
 
   &__block {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    margin-bottom: 50px;
+    margin-bottom: rem(50px);
 
     &:last-child {
       margin-bottom: 0;
@@ -74,9 +76,9 @@ export default {}
 
     &-image {
       background: gray;
-      width: 500px;
-      height: 250px;
-      border: 2px solid #696969;
+      width: rem(500px);
+      height: rem(250px);
+      border: rem(2px) solid #696969;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -85,8 +87,8 @@ export default {}
       .--no-image {
         font-style: normal;
         font-family: Roboto Slab;
-        font-size: 30px;
-        line-height: 30px;
+        font-size: rem(30px);
+        line-height: rem(30px);
         color: #fff;
         text-transform: uppercase;
       }
@@ -95,23 +97,23 @@ export default {}
     &-content {
       font-family: Manrope;
       font-weight: normal;
-      margin-left: 25px;
-      max-width: 600px;
+      margin-left: rem(25px);
+      max-width: rem(600px);
       width: 100%;
     }
 
     &-title {
       font-weight: bold;
       font-style: italic;
-      font-size: 30px;
-      line-height: 30px;
-      margin-bottom: 25px;
+      font-size: rem(30px);
+      line-height: rem(30px);
+      margin-bottom: rem(25px);
     }
 
     &-text {
       color: #696969;
-      font-size: 22px;
-      line-height: 30px;
+      font-size: rem(22px);
+      line-height: rem(30px);
     }
   }
 }
