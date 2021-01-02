@@ -51,6 +51,8 @@ export default {
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: ['nuxt-svg-loader'],
 
+  target: 'static',
+
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {},
 }
