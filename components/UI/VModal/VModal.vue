@@ -1,13 +1,7 @@
 <template>
   <transition name="fade">
-    <div
-      v-if="value"
-      class="v-modal"
-    >
-      <div
-        class="v-modal__background"
-        @click="$emit('input', false)"
-      />
+    <div v-if="value" class="v-modal">
+      <div class="v-modal__background" @click="$emit('input', false)" />
 
       <div class="v-modal__content">
         <slot />
@@ -24,11 +18,7 @@ export default {
       default: false,
     },
   },
-};
+}
 </script>
 
-<style
-  lang="scss"
-  src="./VModal.scss"
-  scoped
-></style>
+<style lang="scss" src="./VModal.scss" scoped></style>
