@@ -8,18 +8,6 @@
         </div>
       </div>
 
-      <div class="main__info">
-        <div class="main__list">
-          <div
-            v-for="(point, index) in list"
-            :key="index"
-            class="main__list-point"
-          >
-            {{ point.text }}
-          </div>
-        </div>
-      </div>
-
       <div class="main__button">Записаться на пробную сессию</div>
     </div>
   </div>
@@ -28,22 +16,7 @@
 <script>
 export default {
   data() {
-    return {
-      list: [
-        {
-          text: 'consectetur adipisicing elit',
-        },
-        {
-          text: 'consectetur adipisicing elit',
-        },
-        {
-          text: 'consectetur adipisicing elit',
-        },
-        {
-          text: 'consectetur adipisicing elit',
-        },
-      ],
-    }
+    return {}
   },
 }
 </script>
@@ -66,76 +39,56 @@ export default {
     right: 0;
     bottom: 0;
     background: linear-gradient(
-      252.44deg,
-      rgba(236, 218, 201, 0.222) 0%,
-      rgba(0, 0, 0, 0.6) 43.33%
+      177.86deg,
+      #000000 -11.81%,
+      rgba(0, 0, 0, 0.4) 82.48%
     );
-    padding: rem(250px 0 75px);
+    padding: rem(150px 0 0);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
   &__title {
-    font-family: Roboto Slab;
-    font-size: rem(76px);
-    line-height: rem(87px);
-    font-weight: normal;
+    font-family: Oswald;
+    font-weight: 500;
+    font-size: rem(72px);
+    line-height: rem(107px);
+    letter-spacing: rem(4.608px);
     color: #ffffff;
     text-align: center;
   }
 
   &__suptitle {
-    margin: rem(30px 0);
+    margin: rem(24px 0);
     text-align: center;
-    font-family: Manrope;
+    font-family: Open Sans;
     font-weight: normal;
-    font-size: rem(24px);
-    line-height: rem(30px);
+    font-size: rem(20px);
+    line-height: rem(27px);
+    letter-spacing: rem(1.28px);
     color: #ffffff;
   }
 
-  &__info {
-    margin: rem(150px 0 0 150px);
-  }
-
-  &__list {
-    &-point {
-      position: relative;
-      font-family: Manrope;
-      font-weight: normal;
-      font-size: rem(20px);
-      line-height: rem(28px);
-      color: #ffffff;
-      margin-bottom: rem(25px);
-      padding-left: rem(25px);
-
-      &:last-child {
-        margin-bottom: 0;
-      }
-
-      &:before {
-        content: '';
-        position: absolute;
-        top: 50%;
-        margin-top: rem(-4px);
-        left: 0;
-        background: #fff;
-        width: rem(10px);
-        height: rem(10px);
-        border-radius: 50%;
-      }
-    }
-  }
   &__button {
     cursor: pointer;
-    background: #fea12b;
+    border: rem(1px) solid #fff;
     color: #fff;
-    font-family: Manrope;
-    font-weight: normal;
-    font-size: rem(24px);
-    line-height: rem(30px);
+    font-family: Oswald;
+    font-weight: bold;
+    font-size: rem(20px);
+    line-height: rem(27px);
     padding: rem(16px 50px);
-    border-radius: rem(32px);
+    border-radius: rem(16px);
     max-width: rem(375px);
-    margin: rem(25px auto 0);
+    margin: rem(150px auto 0);
+    transition: all 0.3s linear;
+
+    &:hover {
+      background: #fff;
+      color: #504e4e;
+    }
   }
 }
 </style>

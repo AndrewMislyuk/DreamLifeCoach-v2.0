@@ -61,11 +61,11 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: rgba(65, 105, 184, 0.8);
+  background: rgba(0, 0, 0, 0.4);
   padding: rem(25px 90px 25px 125px);
 
   &__logo {
-    font-family: Gugi;
+    font-family: Oswald;
     font-style: normal;
     font-weight: normal;
     font-size: rem(26px);
@@ -76,13 +76,32 @@ export default {
   &__menu {
     &-link {
       text-decoration: none;
-      font-family: Manrope;
+      font-family: Open Sans;
       font-style: normal;
       font-weight: normal;
-      font-size: rem(22px);
-      line-height: rem(30px);
+      font-size: rem(16px);
+      line-height: rem(21px);
+      letter-spacing: rem(1.94px);
       color: #ffffff;
       margin-right: rem(35px);
+      position: relative;
+
+      &::before {
+        content: '';
+        position: absolute;
+        bottom: rem(-5px);
+        right: 0;
+        height: rem(2px);
+        width: rem(20px);
+        background: #4caf50;
+        transition: all 0.3s linear;
+      }
+
+      &:hover {
+        &::before {
+          width: 100%;
+        }
+      }
 
       &:last-child {
         margin: 0;

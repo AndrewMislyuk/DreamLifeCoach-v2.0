@@ -1,13 +1,18 @@
 <template>
   <div class="info">
-    <div class="info__title">Мы предлагаем</div>
-    <div class="info__content">
-      <div v-for="(item, index) in items" :key="index" class="info__block">
-        <div class="info__block-icon">
-          <i :class="`${item.icon} --icon-position`"></i>
+    <div class="info__wrapper">
+      <div class="info__title">Мы предлагаем</div>
+
+      <div class="info__content">
+        <div v-for="(item, index) in items" :key="index" class="info__block">
+          <div class="info__block-header">
+            <div class="info__block-title">{{ item.title }}</div>
+            <div class="info__block-icon">
+              <div :class="item.icon"></div>
+            </div>
+          </div>
+          <div class="info__block-text">{{ item.text }}</div>
         </div>
-        <div class="info__block-title">{{ item.title }}</div>
-        <div class="info__block-text">{{ item.text }}</div>
       </div>
     </div>
   </div>
@@ -19,25 +24,25 @@ export default {
     return {
       items: [
         {
-          icon: 'fas fa-ban',
+          icon: 'fas fa-ban --first-icon',
           title: 'ПРОГРАММА ОГРАНИЧЕНИЙ',
           text:
             'Проработка негативных убеждений, которые блокируют приток денег, любви.',
         },
         {
-          icon: 'fas fa-child',
+          icon: 'fas fa-child --second-icon',
           title: 'РАБОТА С ДЕТСКИМИ УСТАНОВКАМИ',
           text:
             'Проработка болезненных, проблемнных, жизненных ситуаций в прошлом, которые влияют на ваше будущее.',
         },
+        // {
+        //   icon: 'fas fa-hands-helping',
+        //   title: '"ПОМОГИ СЕБЕ САМ"',
+        //   text:
+        //     'Быть в ресурсном состоянии, находить счастье и радость в простых вещах.',
+        // },
         {
-          icon: 'fas fa-hands-helping',
-          title: '"ПОМОГИ СЕБЕ САМ"',
-          text:
-            'Быть в ресурсном состоянии, находить счастье и радость в простых вещах.',
-        },
-        {
-          icon: 'fas fa-bullseye',
+          icon: 'fas fa-bullseye --third-icon',
           title: 'ПОСТАНОВКА ЦЕЛЕЙ',
           text: 'Понять свои истинные желания и способы их реализовать.',
         },
@@ -52,80 +57,127 @@ export default {
 
 .info {
   width: 100%;
-  padding: rem(100px 0);
-  background: #272e6d;
+  max-width: rem(1920px);
+  padding: rem(129px 0 136px);
+  background: #fbfbfb;
+
+  &__wrapper {
+    max-width: rem(1100px);
+    margin: 0 auto;
+  }
 
   &__title {
-    font-family: Roboto Slab;
-    font-size: rem(76px);
-    line-height: rem(87px);
-    font-weight: normal;
-    color: #fff;
-    text-align: center;
-    max-width: rem(650px);
-    margin: 0 auto;
-    padding-bottom: rem(10px);
-    border-bottom: rem(2px) solid #e84545;
+    font-family: Oswald;
+    font-weight: bold;
+    font-size: rem(48px);
+    line-height: rem(71px);
+    letter-spacing: rem(3.072px);
+    color: #252525;
+    position: relative;
+    margin-bottom: rem(94px);
+
+    &::before {
+      position: absolute;
+      content: '';
+      width: rem(45px);
+      height: rem(2px);
+      background: #252525;
+      bottom: rem(-10px);
+      left: 0;
+    }
   }
 
   &__content {
-    margin-top: rem(100px);
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
+    justify-content: space-between;
+    align-items: center;
   }
 
   &__block {
-    max-width: rem(300px);
-    width: 100%;
-    margin-right: rem(75px);
-    font-family: Manrope;
-    font-weight: normal;
-
-    &:last-child {
-      margin-right: 0;
-    }
+    background: #ffffff;
+    width: rem(350px);
+    height: rem(300px);
+    box-sizing: border-box;
+    padding: rem(50px 48px 35px 44px);
+    transition: all 0.1 linear;
+    border-bottom: 3px solid #fff;
 
     &:hover {
+      border-color: #70bf73;
+
       .info__block-icon {
-        border-color: #e84545;
-        color: #e84545;
+        color: #70bf73;
       }
     }
 
-    &-icon {
-      border: rem(3px) solid #fff;
-      color: #fff;
-      font-size: rem(60px);
-      width: rem(100px);
-      height: rem(100px);
-      margin: rem(0 auto 25px);
-      border-radius: 50%;
-      transition: all 0.2s linear;
-
-      .--icon-position {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-top: rem(20px);
-      }
+    &-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: rem(36px);
     }
 
     &-title {
-      text-align: center;
-      text-transform: uppercase;
-      font-weight: bold;
-      color: #fff;
+      max-width: rem(100px);
+      font-family: Oswald;
+      font-weight: 300;
       font-size: rem(20px);
-      line-height: rem(28px);
-      margin-bottom: rem(15px);
+      line-height: rem(30px);
+      letter-spacing: rem(1.28px);
+      text-transform: uppercase;
+      color: #252525;
+      position: relative;
+
+      &::before {
+        position: absolute;
+        content: '';
+        left: 0;
+        bottom: rem(-5px);
+        width: rem(35px);
+        height: rem(2px);
+        background: #252525;
+      }
     }
 
     &-text {
-      color: #e2e2e2;
-      font-size: rem(16px);
-      line-height: rem(20px);
-      text-align: justify;
+      font-family: Open Sans;
+      font-weight: normal;
+      font-size: rem(12px);
+      line-height: rem(25px);
+      letter-spacing: rem(1.008px);
+      color: #777777;
+    }
+
+    &-icon {
+      background: #ffffff;
+      box-shadow: 0px 0px 20px #dbdbdb;
+      width: rem(50px);
+      height: rem(50px);
+      border-radius: 50%;
+      position: relative;
+      transition: all 0.1s linear;
+
+      .--first-icon,
+      .--second-icon,
+      .--third-icon {
+        position: absolute;
+        font-size: rem(25px);
+        left: 50%;
+        top: 50%;
+        margin-top: rem(-12px);
+      }
+
+      .--first-icon {
+        margin-left: rem(-12px);
+      }
+
+      .--second-icon {
+        margin-left: rem(-10px);
+      }
+
+      .--third-icon {
+        margin-left: rem(-12px);
+      }
     }
   }
 }

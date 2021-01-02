@@ -12,7 +12,7 @@ export default {
       { rel: 'preconnect', href: 'https://fonts.gstatic.com' },
       {
         href:
-          'https://fonts.googleapis.com/css2?family=Gugi&family=Manrope:wght@400;700&family=Roboto+Slab:wght@400;700&display=swap',
+          'https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Oswald:wght@300;400;500;600;700&display=swap',
         rel: 'stylesheet',
       },
     ],

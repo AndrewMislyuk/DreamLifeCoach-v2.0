@@ -1,26 +1,7 @@
 <template>
   <div class="programs">
-    <div class="programs__title">Программы</div>
-
-    <div class="programs__content">
-      <div
-        v-for="(program, index) in programs"
-        :key="index"
-        class="programs__block"
-      >
-        <div class="programs__block-image">
-          <img
-            :src="require(`@/assets/images/item${program.image}.webp`)"
-            alt="photo"
-          />
-        </div>
-
-        <div>
-          <div class="programs__block-title">{{ program.title }}</div>
-          <div class="programs__block-text">{{ program.text }}</div>
-          <div class="programs__block-button">Подробнее</div>
-        </div>
-      </div>
+    <div class="programs__wrapper">
+      <div class="programs__title">Наши программы</div>
     </div>
   </div>
 </template>
@@ -81,70 +62,32 @@ export default {
 @import 'sass-rem/_rem.scss';
 
 .programs {
-  background: #fff;
   width: 100%;
-  padding: rem(100px 0);
+  padding: rem(146px 0 177px);
+
+  &__wrapper {
+    max-width: rem(1100px);
+    width: 100%;
+    margin: 0 auto;
+  }
 
   &__title {
-    font-family: Roboto Slab;
-    font-size: rem(76px);
-    line-height: rem(87px);
-    font-weight: normal;
-    color: #333;
-    text-align: center;
-    max-width: rem(475px);
-    margin: 0 auto;
-    padding-bottom: rem(10px);
-    border-bottom: rem(2px) solid #fea12b;
-  }
+    font-family: Oswald;
+    font-weight: bold;
+    font-size: rem(48px);
+    line-height: rem(71px);
+    letter-spacing: rem(3.072px);
+    color: #252525;
+    position: relative;
 
-  &__content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    max-width: rem(1000px);
-    width: 100%;
-    margin: rem(100px auto 0);
-  }
-
-  &__block {
-    font-family: Manrope;
-    font-weight: normal;
-    display: flex;
-    margin-top: rem(50px);
-    align-items: flex-start;
-
-    &:first-child {
-      margin-top: 0;
-    }
-
-    &-image {
-      margin-right: rem(50px);
-    }
-
-    &-title {
-      font-weight: bold;
-      font-style: italic;
-      font-size: rem(30px);
-      line-height: rem(30px);
-      margin-bottom: rem(25px);
-    }
-
-    &-text {
-      color: #696969;
-      font-size: rem(18px);
-      line-height: rem(22px);
-      margin-bottom: rem(50px);
-    }
-
-    &-button {
-      background: #fea12b;
-      color: #fff;
-      padding: rem(10px 32px);
-      width: rem(85px);
-      border-radius: rem(16px);
-      cursor: pointer;
+    &::before {
+      position: absolute;
+      content: '';
+      bottom: rem(-10px);
+      left: 0;
+      background: #252525;
+      width: rem(45px);
+      height: rem(2px);
     }
   }
 }

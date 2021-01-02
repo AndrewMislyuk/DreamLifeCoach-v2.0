@@ -44,7 +44,7 @@ export default {
 }
 
 body {
-  background: rgba(65, 105, 184, 0.8);
+  background: #fff;
   cursor: default;
 }
 </style>
