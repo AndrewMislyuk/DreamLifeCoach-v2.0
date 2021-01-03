@@ -1,111 +1,113 @@
 <template>
   <div class="contacts">
-    <div class="contacts__title">Контакты</div>
+    <div class="contacts__wrapper">
+      <div class="contacts__title">Обратная связь</div>
 
-    <div class="contacts__content">
-      <form @submit.prevent="sendForm" class="contacts__form">
-        <div
-          class="contacts__form-input"
-          :class="{
-            '--wrong': $v.name.$error,
-            '--success': !$v.name.$invalid,
-          }"
-        >
-          <input
-            type="text"
-            v-model.trim="$v.name.$model"
-            placeholder="Как к вам обращаться?"
-          />
+      <div class="contacts__content">
+        <form @submit.prevent="sendForm" class="contacts__form">
+          <div
+            class="contacts__form-input"
+            :class="{
+              '--wrong': $v.name.$error,
+              '--success': !$v.name.$invalid,
+            }"
+          >
+            <input
+              type="text"
+              v-model.trim="$v.name.$model"
+              placeholder="Как к вам обращаться?"
+            />
 
-          <div class="contacts__form-success">
-            <i class="fas fa-check"></i>
+            <div class="contacts__form-success">
+              <i class="fas fa-check"></i>
+            </div>
+            <div class="contacts__form-wrong">
+              <i class="fas fa-times"></i>
+            </div>
           </div>
-          <div class="contacts__form-wrong">
-            <i class="fas fa-times"></i>
-          </div>
-        </div>
 
-        <div
-          class="contacts__form-input"
-          :class="{
-            '--wrong': $v.email.$error,
-            '--success': !$v.email.$invalid,
-          }"
-        >
-          <input
-            type="text"
-            v-model.trim="$v.email.$model"
-            placeholder="Ваш email"
-          />
+          <div
+            class="contacts__form-input"
+            :class="{
+              '--wrong': $v.email.$error,
+              '--success': !$v.email.$invalid,
+            }"
+          >
+            <input
+              type="text"
+              v-model.trim="$v.email.$model"
+              placeholder="Ваш email"
+            />
 
-          <div class="contacts__form-success">
-            <i class="fas fa-check"></i>
+            <div class="contacts__form-success">
+              <i class="fas fa-check"></i>
+            </div>
+            <div class="contacts__form-wrong">
+              <i class="fas fa-times"></i>
+            </div>
           </div>
-          <div class="contacts__form-wrong">
-            <i class="fas fa-times"></i>
-          </div>
-        </div>
 
-        <div class="contacts__form-phone">
-          <Phone v-model.trim="phone" />
-        </div>
-
-        <div
-          class="contacts__form-select"
-          :class="{
-            '--wrong': $v.course.$error,
-            '--success': !$v.course.$invalid,
-          }"
-        >
-          <Select
-            v-model="$v.course.$model"
-            :options="list"
-            placeholder="Какой курс вас заинтересовал?"
-          />
-        </div>
-
-        <div
-          class="contacts__form-textarea"
-          :class="{
-            '--wrong': $v.notation.$error,
-            '--success': !$v.notation.$invalid,
-          }"
-        >
-          <textarea
-            v-model.trim="$v.notation.$model"
-            placeholder="Удобный способ связи(Viber/Telegram/WhatsApp)"
-          ></textarea>
-
-          <div class="contacts__form-success">
-            <i class="fas fa-check"></i>
+          <div class="contacts__form-phone">
+            <Phone v-model.trim="phone" />
           </div>
-          <div class="contacts__form-wrong">
-            <i class="fas fa-times"></i>
-          </div>
-        </div>
 
-        <button
-          class="contacts__form-btn"
-          type="submit"
-          :class="{ '--disabled': $v.$invalid }"
-          :disabled="$v.$invalid"
-        >
-          Отправить
-        </button>
-      </form>
-      <div class="contacts__info">
-        <div class="contacts__info-title">Контакты для связи</div>
-        <div class="contacts__info-data">
-          <div class="contacts__info-icon">
-            <i class="fas fa-phone-square-alt"></i>
+          <div
+            class="contacts__form-select"
+            :class="{
+              '--wrong': $v.course.$error,
+              '--success': !$v.course.$invalid,
+            }"
+          >
+            <Select
+              v-model="$v.course.$model"
+              :options="list"
+              placeholder="Какой курс вас заинтересовал?"
+            />
           </div>
-          Телефон: (+380)-68-160-35-22
-        </div>
-        <div class="contacts__info-data">
-          <div class="contacts__info-icon">
-            <i class="fas fa-envelope"></i>
+
+          <div
+            class="contacts__form-textarea"
+            :class="{
+              '--wrong': $v.notation.$error,
+              '--success': !$v.notation.$invalid,
+            }"
+          >
+            <textarea
+              v-model.trim="$v.notation.$model"
+              placeholder="Удобный способ связи(Viber/Telegram/WhatsApp)"
+            ></textarea>
+
+            <div class="contacts__form-success">
+              <i class="fas fa-check"></i>
+            </div>
+            <div class="contacts__form-wrong">
+              <i class="fas fa-times"></i>
+            </div>
           </div>
-          Почта: ludmila23kr@gmail.com
+
+          <button
+            class="contacts__form-btn"
+            type="submit"
+            :class="{ '--disabled': $v.$invalid }"
+            :disabled="$v.$invalid"
+          >
+            Отправить
+          </button>
+        </form>
+        <div class="contacts__info">
+          <div class="contacts__info-title">Контакты для связи</div>
+          <div class="contacts__info-data">
+            <div class="contacts__info-icon">
+              <i class="fas fa-phone-square-alt"></i>
+            </div>
+            Телефон: (+380)-68-160-35-22
+          </div>
+          <div class="contacts__info-data">
+            <div class="contacts__info-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            Почта: ludmila23kr@gmail.com
+          </div>
         </div>
       </div>
     </div>
@@ -169,21 +171,32 @@ export default {
 @import 'sass-rem/_rem.scss';
 
 .contacts {
-  background: #fff;
   width: 100%;
-  padding: rem(100px 0);
+  padding: rem(125px 0);
+
+  &__wrapper {
+    max-width: rem(1100px);
+    margin: 0 auto;
+  }
 
   &__title {
-    font-family: Roboto Slab;
-    font-size: rem(76px);
-    line-height: rem(87px);
-    font-weight: normal;
-    color: #333;
-    text-align: center;
-    max-width: rem(400px);
-    margin: 0 auto;
-    padding-bottom: rem(10px);
-    border-bottom: rem(2px) solid #fea12b;
+    font-family: Oswald;
+    font-weight: bold;
+    font-size: rem(48px);
+    line-height: rem(71px);
+    letter-spacing: rem(3.072px);
+    color: #252525;
+    position: relative;
+
+    &::before {
+      position: absolute;
+      content: '';
+      background: #252525;
+      left: 0;
+      bottom: rem(-20px);
+      width: rem(45px);
+      height: rem(2px);
+    }
   }
 
   &__content {
@@ -205,7 +218,7 @@ export default {
       .contacts__form-success {
         position: absolute;
         top: 50%;
-        color: #049b04;
+        color: #4caf50;
         margin-top: rem(-10px);
         right: rem(-20px);
         opacity: 0;
@@ -226,10 +239,10 @@ export default {
         }
 
         input {
-          border-color: #049b04;
+          border-color: #4caf50;
 
           &:focus {
-            border-color: #049b04;
+            border-color: #4caf50;
           }
         }
       }
@@ -259,7 +272,7 @@ export default {
 
         &:focus {
           outline: none;
-          border-color: #ff8c00;
+          border-color: #252525;
           box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
             0 0 8px rgba(233, 209, 102, 0.6);
         }
@@ -280,7 +293,7 @@ export default {
       }
 
       &.--success {
-        border: rem(1px) solid #049b04;
+        border: rem(1px) solid #4caf50;
       }
     }
 
@@ -296,7 +309,7 @@ export default {
       .contacts__form-success {
         position: absolute;
         top: 8%;
-        color: #049b04;
+        color: #4caf50;
         right: rem(-20px);
         opacity: 0;
       }
@@ -315,10 +328,10 @@ export default {
         }
 
         textarea {
-          border-color: #049b04;
+          border-color: #4caf50;
 
           &:focus {
-            border-color: #049b04;
+            border-color: #4caf50;
           }
         }
       }
@@ -349,7 +362,7 @@ export default {
 
         &:focus {
           outline: none;
-          border-color: #ff8c00;
+          border-color: #252525;
           box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
             0 0 8px rgba(233, 209, 102, 0.6);
         }
@@ -364,9 +377,9 @@ export default {
       margin-top: rem(20px);
       outline: none;
       border: none;
-      color: #ff8c00;
+      color: #252525;
       background: #fff;
-      border: 1px solid #ff8c00;
+      border: 1px solid #252525;
       box-sizing: border-box;
       font-size: rem(20px);
       padding: rem(12px 20px);
@@ -374,18 +387,13 @@ export default {
       transition: all 0.3s ease-in-out;
 
       &:hover {
-        background: #f08400;
+        background: #4caf50;
         color: #fff;
       }
 
       &.--disabled {
         opacity: 0.6;
         cursor: default;
-
-        &:hover {
-          background: #fff;
-          color: #ff8c00;
-        }
       }
     }
   }
@@ -401,7 +409,7 @@ export default {
       color: #333;
       width: rem(325px);
       padding-bottom: rem(10px);
-      border-bottom: rem(2px) solid #fea12b;
+      border-bottom: rem(2px) solid #4caf50;
       margin-bottom: rem(50px);
     }
 

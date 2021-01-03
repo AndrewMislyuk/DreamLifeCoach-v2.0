@@ -57,7 +57,6 @@ export default {
 
 .info {
   width: 100%;
-  max-width: rem(1920px);
   padding: rem(129px 0 136px);
   background: #fbfbfb;
 

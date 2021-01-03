@@ -17,10 +17,10 @@
     }
 
     .v-phone__dropdown {
-      border-color: #ff8c00;
+      border-color: #252525;
       box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
         0 0 8px rgba(233, 209, 102, 0.6);
-      border-right: 1px solid #ff8c00;
+      border-right: 1px solid #252525;
     }
   }
 
@@ -44,10 +44,10 @@
     }
 
     .v-phone__field {
-      border-color: #049b04;
+      border-color: #4caf50;
 
       &:focus {
-        border-color: #049b04;
+        border-color: #4caf50;
       }
     }
   }
@@ -55,7 +55,7 @@
   &__success {
     position: absolute;
     top: 50%;
-    color: #049b04;
+    color: #4caf50;
     margin-top: rem(-10px);
     right: rem(32px);
     opacity: 0;
@@ -124,7 +124,7 @@
 
     &:focus {
       outline: none;
-      border-color: #ff8c00;
+      border-color: #252525;
       box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
         0 0 8px rgba(233, 209, 102, 0.6);
     }
@@ -190,7 +190,7 @@
 
     &:hover {
       cursor: pointer;
-      color: #ff8c00;
+      color: #252525;
     }
   }
 }
