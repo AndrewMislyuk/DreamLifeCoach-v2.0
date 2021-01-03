@@ -51,8 +51,6 @@ export default {
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: ['nuxt-svg-loader'],
 
-  router: { base: '/DreamLifeCoach-v2.0/' },
-
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {},
 }

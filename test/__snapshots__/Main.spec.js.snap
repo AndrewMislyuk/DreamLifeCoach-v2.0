@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TheFooter renders properly 1`] = `"<div class=\\"footer\\"></div>"`;
