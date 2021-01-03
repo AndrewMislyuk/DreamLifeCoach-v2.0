@@ -2,13 +2,14 @@
   <div class="main">
     <div class="main__background">
       <div>
-        <div class="main__title">Бизнес коучинг</div>
+        <!-- <div class="main__title">Бизнес коучинг</div> -->
+        <div class="main__title">Психологические сессии</div>
         <div class="main__suptitle">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. adipisicing
+          Преодолеваем жизненные трудности вместе
         </div>
       </div>
 
-      <div class="main__button">Записаться на пробную сессию</div>
+      <a href="#contacts" class="main__button">Записаться на пробную сессию</a>
     </div>
   </div>
 </template>
@@ -72,6 +73,7 @@ export default {
   }
 
   &__button {
+    text-decoration: none;
     cursor: pointer;
     border: rem(1px) solid #fff;
     color: #fff;

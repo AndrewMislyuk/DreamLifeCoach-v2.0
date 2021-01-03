@@ -202,7 +202,7 @@ export default {
       font-family: Oswald;
       font-weight: 300;
       font-size: rem(48px);
-      line-height: rem(71px);
+      line-height: rem(60px);
       letter-spacing: rem(3.072px);
       color: #252525;
 

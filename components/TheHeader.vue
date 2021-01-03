@@ -21,27 +21,27 @@ export default {
       links: [
         {
           text: 'Главная',
-          rout: '#',
+          rout: '#main',
         },
 
         {
           text: 'О нас',
-          rout: '#',
+          rout: '#team',
         },
 
         {
           text: 'Программы',
-          rout: '#',
+          rout: '#program',
         },
 
         {
           text: 'Оплата',
-          rout: '#',
+          rout: '#payments',
         },
 
         {
           text: 'Пробная сессия',
-          rout: '#',
+          rout: '#contacts',
         },
       ],
     }
@@ -85,6 +85,7 @@ export default {
       color: #ffffff;
       margin-right: rem(35px);
       position: relative;
+      cursor: pointer;
 
       &::before {
         content: '';
@@ -92,14 +93,15 @@ export default {
         bottom: rem(-5px);
         right: 0;
         height: rem(2px);
-        width: rem(20px);
+        width: 100%;
         background: #4caf50;
         transition: all 0.3s linear;
+        opacity: 0;
       }
 
       &:hover {
         &::before {
-          width: 100%;
+          opacity: 1;
         }
       }
 

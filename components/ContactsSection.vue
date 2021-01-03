@@ -394,6 +394,11 @@ export default {
       &.--disabled {
         opacity: 0.6;
         cursor: default;
+
+        &:hover {
+          background: #fff;
+          color: #252525;
+        }
       }
     }
   }

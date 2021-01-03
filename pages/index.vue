@@ -1,12 +1,12 @@
 <template>
   <div>
     <TheHeader />
-    <MainSection />
-    <TeamSection />
-    <InfoSection />
-    <ProgramsSection />
-    <PaymentsSection />
-    <ContactsSection />
+    <MainSection id="main" />
+    <TeamSection id="team" />
+    <InfoSection id="info" />
+    <ProgramsSection id="program" />
+    <PaymentsSection id="payments" />
+    <ContactsSection id="contacts" />
     <TheFooter />
   </div>
 </template>
@@ -46,5 +46,9 @@ export default {
 body {
   background: #fff;
   cursor: default;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 </style>
