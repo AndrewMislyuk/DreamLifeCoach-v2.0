@@ -98,15 +98,15 @@
           <div class="contacts__info-title">Контакты для связи</div>
           <div class="contacts__info-data">
             <div class="contacts__info-icon">
-              <i class="fas fa-phone-square-alt"></i>
+              <span class="fas fa-phone-square-alt" />
             </div>
             Телефон: (+380)-68-160-35-22
           </div>
           <div class="contacts__info-data">
             <div class="contacts__info-icon">
-              <i class="fas fa-envelope"></i>
+              <span class="fas fa-envelope" />
             </div>
-            Почта: ludmila23kr@gmail.com
+            Почта: ludmila23kr@gmail.com Почта: pochta@gmail.com
           </div>
         </div>
       </div>
@@ -177,6 +177,10 @@ export default {
   &__wrapper {
     max-width: rem(1100px);
     margin: 0 auto;
+
+    @include for-tablet-horizontal {
+      max-width: rem(700px);
+    }
   }
 
   &__title {
@@ -205,10 +209,20 @@ export default {
     align-items: flex-start;
     margin: rem(100px auto 0);
     max-width: rem(1000px);
+
+    @include for-tablet-horizontal {
+      max-width: rem(700px);
+      flex-wrap: wrap;
+    }
   }
 
   &__form {
     width: 70%;
+
+    @include for-tablet-horizontal {
+      width: 100%;
+      margin: rem(0 auto 75px);
+    }
 
     &-input {
       position: relative;
@@ -405,6 +419,10 @@ export default {
 
   &__info {
     width: 40%;
+
+    @include for-tablet-horizontal {
+      width: 100%;
+    }
 
     &-title {
       font-family: Roboto Slab;

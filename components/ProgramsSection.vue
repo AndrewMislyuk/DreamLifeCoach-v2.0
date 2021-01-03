@@ -14,7 +14,12 @@
           <div class="programs__block-title --left-side">
             {{ program1.title }}
           </div>
-          <div class="programs__block-btn --left-side">Подробнее</div>
+          <div
+            class="programs__block-btn --left-side"
+            @click="openImage(program1.btn, program1.title, program1.text)"
+          >
+            Подробнее
+          </div>
         </div>
       </div>
 
@@ -30,24 +35,50 @@
           <div class="programs__block-title --right-side">
             {{ program2.title }}
           </div>
-          <div class="programs__block-btn --right-side">Подробнее</div>
+          <div
+            class="programs__block-btn --right-side"
+            @click="openImage(program2.btn, program2.title, program2.text)"
+          >
+            Подробнее
+          </div>
         </div>
       </div>
     </div>
+
+    <Modal v-model="isImagesPopupOpen">
+      <ImagePopup
+        @close="isImagesPopupOpen = false"
+        :photoPath="photoPath"
+        :titlePath="titlePath"
+        :textPath="textPath"
+      />
+    </Modal>
   </div>
 </template>
 
 <script>
+import Modal from '@/components/UI/VModal/VModal'
+import ImagePopup from '@/components/TheImagePopup'
+
 export default {
+  components: {
+    Modal,
+    ImagePopup,
+  },
+
   data() {
     return {
+      isImagesPopupOpen: false,
+      photoPath: null,
+      titlePath: null,
+      textPath: null,
       programs1: [
         {
           image: '--first-image',
           title: 'Лучшая версия себя',
           text:
             'Программа "Создай свою лучшую версию" раскроет ваш внутренний потенциал, поможет найти свое предназначение. Вы почувствуете прилив энергии и, наконец-то, займетесь своим любимым делом!',
-          bottom: '',
+          btn: '1',
         },
 
         {
@@ -55,7 +86,7 @@ export default {
           title: 'Стать счастливым',
           text:
             '"МЕЧТЫ-сбываются, желания-исполняются!"- не ваш девиз? После программы "Как стать счастливым" вашими ключевыми фразами станут : хочу жить, хочу любить, хочу мечтать! Эта "троица" наполнит осознанием своих истинных желаний, внутренней энергией, свободой и силой.',
-          bottom: '',
+          btn: '2',
         },
 
         {
@@ -63,7 +94,7 @@ export default {
           title: 'Справиться с потерями в жизни',
           text:
             'Жизнь не доставляет вам удовольствия? Депрессия сдавливает горло? Программа "Как справиться с потерями в жизни" избавит вас навсегда от негативного опыта и переживаний, даст возможность задышать полной грудью.',
-          bottom: '',
+          btn: '3',
         },
       ],
       programs2: [
@@ -72,7 +103,7 @@ export default {
           title: 'Выйти замуж за 90 дней',
           text:
             'Если вы мечтаете с радостью просыпаться на плече любимого, получать удовольствие от жизни вдвоем, пройдите нашу программу "Как выйти замуж за 90 дней" и вы услышите те самые заветные: "Я хочу пройти этот путь вместе с тобой..." от самого лучшего мужчины в вашей жизни.',
-          bottom: '',
+          btn: '4',
         },
 
         {
@@ -80,7 +111,7 @@ export default {
           title: 'Прибыльный бизнес за 90 дней',
           text:
             '"А жизнь-то налаживается..." У вас не так? Программа "Как создать свой прибыльный бизнес" поможет продумать, подготовить и внедрить крутой бизнес-план(круче только яйца)!',
-          bottom: '',
+          btn: '5',
         },
 
         {
@@ -88,17 +119,24 @@ export default {
           title: 'Преодоление кризисов',
           text:
             'Программа "Преодоление кризисов" расставит все точки над и в сфере отношений, здоровья, карьеры, денег, превратит проблемы в ресурсы , чтобы желание действовать, идти вперёд всегда сопровождало вас по жизни, как говорится "вижу цель-не вижу препятствий"',
-          bottom: '',
+          btn: '6',
         },
       ],
     }
+  },
+
+  methods: {
+    openImage(image, title, text) {
+      this.photoPath = image
+      this.titlePath = title
+      this.textPath = text
+      this.isImagesPopupOpen = true
+    },
   },
 }
 </script>
 
 <style lang="scss" scoped>
-@import 'sass-rem/_rem.scss';
-
 .programs {
   width: 100%;
   padding: rem(146px 0 50px);
@@ -110,14 +148,32 @@ export default {
     display: flex;
     justify-content: space-between;
 
+    @include for-tablet-horizontal {
+      display: block;
+    }
+
     &-left {
       display: flex;
       flex-direction: column;
+
+      @include for-tablet-horizontal {
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
     }
 
     &-right {
       display: flex;
       flex-direction: column;
+
+      @include for-tablet-horizontal {
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+    }
+
+    @include for-tablet-horizontal {
+      max-width: rem(700px);
     }
   }
 
@@ -146,6 +202,11 @@ export default {
     max-width: rem(500px);
     height: rem(500px);
     position: relative;
+
+    @include for-tablet-horizontal {
+      width: 100%;
+      margin: 0 auto;
+    }
 
     &-image {
       position: absolute;

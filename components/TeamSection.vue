@@ -2,11 +2,15 @@
   <div class="team">
     <div class="team__content">
       <div class="team__info">
-        <div class="team__info-image" />
+        <div class="team__info-image">
+          <div class="team__info-mask"></div>
+        </div>
         <div class="team__info-group">
           <div class="team__info-title">
-            Людмила
-            <div class="--open-sans">Негода</div>
+            Светлана
+            <div class="--open-sans">Зайцева</div>
+            <!-- Людмила
+            <div class="--open-sans">Негода</div> -->
           </div>
           <div class="team__info-text">
             Дипломированный психолог с опытом работы по методу «Позитивная
@@ -19,8 +23,10 @@
       <div class="team__info --left">
         <div class="team__info-group">
           <div class="team__info-title">
-            Виктория
-            <div class="--open-sans">Коновалова</div>
+            Надежда
+            <div class="--open-sans">Кузнецова</div>
+            <!-- Виктория
+            <div class="--open-sans">Коновалова</div> -->
           </div>
           <div class="team__info-text">
             Закончила "Школу коучинга" Международный институт интеграционного
@@ -28,7 +34,9 @@
             ДПО " МИИР"), лайф-коуч, МАК-коуч, энерго-коуч.
           </div>
         </div>
-        <div class="team__info-image" />
+        <div class="team__info-image">
+          <div class="team__info-mask"></div>
+        </div>
       </div>
     </div>
   </div>
@@ -39,11 +47,17 @@ export default {}
 </script>
 
 <style lang="scss" scoped>
-@import 'sass-rem/_rem.scss';
-
 .team {
   width: 100%;
   padding: rem(130px 0 115px);
+
+  @include for-desktop-hd {
+    padding: rem(130px 0 200px);
+  }
+
+  @include for-tablet-horizontal {
+    padding: rem(130px 0 115px);
+  }
 
   &__content {
     max-width: rem(1100px);
@@ -51,6 +65,10 @@ export default {}
     margin: 0 auto;
     height: rem(600px);
     position: relative;
+
+    @include for-tablet-horizontal {
+      height: auto;
+    }
   }
 
   &__info {
@@ -59,6 +77,17 @@ export default {}
     box-sizing: border-box;
     position: relative;
 
+    @include for-tablet-horizontal {
+      position: static;
+      display: flex;
+      align-items: flex-start;
+      margin: rem(0 auto 100px);
+
+      &:last-child {
+        margin: 0 auto;
+      }
+    }
+
     &-image {
       position: absolute;
       z-index: 10;
@@ -66,15 +95,38 @@ export default {}
       top: 0;
       width: rem(250px);
       height: rem(300px);
+      background: url(~@/assets/images/photo1.png) center / contain no-repeat;
+
+      @include for-tablet-horizontal {
+        position: static;
+        height: rem(250px);
+        margin-right: rem(50px);
+      }
+    }
+
+    &-mask {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
       background: #f4f4f4;
       opacity: 0.6;
-      // background: url() center / contain no-repeat;
+
+      @include for-tablet-horizontal {
+        display: none;
+      }
     }
 
     &-group {
       position: relative;
       z-index: 11;
       padding-top: rem(50px);
+
+      @include for-tablet-horizontal {
+        position: static;
+        padding: 0;
+      }
     }
 
     &-title {
@@ -124,13 +176,33 @@ export default {}
       right: rem(-100px);
       bottom: 5%;
 
+      @include for-desktop-hd {
+        bottom: rem(-100px);
+        right: rem(100px);
+      }
+
+      @include for-tablet-horizontal {
+        position: static;
+      }
+
       .team__info-image {
         left: 0;
+        background: url(~@/assets/images/photo2.png) center / contain no-repeat;
+
+        @include for-tablet-horizontal {
+          margin: rem(0 0 0 50px);
+        }
       }
 
       .team__info-group {
         padding-top: rem(75px);
         right: -30%;
+        max-width: rem(400px);
+
+        @include for-tablet-horizontal {
+          position: static;
+          padding: 0;
+        }
       }
     }
   }
@@ -144,6 +216,10 @@ export default {}
     background: #4caf50;
     mix-blend-mode: normal;
     opacity: 0.8;
+
+    @include for-tablet-horizontal {
+      display: none;
+    }
   }
 }
 </style>

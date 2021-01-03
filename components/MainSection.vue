@@ -23,8 +23,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import 'sass-rem/_rem.scss';
-
 .main {
   max-width: rem(1920px);
   width: 100%;

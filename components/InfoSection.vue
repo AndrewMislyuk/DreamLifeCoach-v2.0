@@ -53,8 +53,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import 'sass-rem/_rem.scss';
-
 .info {
   width: 100%;
   padding: rem(129px 0 136px);
@@ -63,6 +61,10 @@ export default {
   &__wrapper {
     max-width: rem(1100px);
     margin: 0 auto;
+
+    @include for-tablet-horizontal {
+      max-width: rem(700px);
+    }
   }
 
   &__title {
@@ -90,6 +92,10 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @include for-tablet-horizontal {
+      flex-wrap: wrap;
+    }
   }
 
   &__block {
@@ -100,6 +106,15 @@ export default {
     padding: rem(50px 48px 35px 44px);
     transition: all 0.1 linear;
     border-bottom: 3px solid #fff;
+
+    @include for-tablet-horizontal {
+      width: 75%;
+      margin: rem(0 auto 50px);
+
+      &:last-child {
+        margin: 0 auto;
+      }
+    }
 
     &:hover {
       border-color: #70bf73;

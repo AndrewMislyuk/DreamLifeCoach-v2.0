@@ -40,8 +40,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import 'sass-rem/_rem.scss';
-
 .footer {
   background-color: #2e2e2e;
   color: #fff;

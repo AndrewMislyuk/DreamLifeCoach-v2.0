@@ -1,0 +1,17 @@
+@mixin for-desktop-hd {
+  @media (max-width: 1366px) {
+    @content;
+  }
+}
+
+@mixin for-tablet-horizontal {
+  @media (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin for-tablet-vertical {
+  @media (max-width: 720px) {
+    @content;
+  }
+}

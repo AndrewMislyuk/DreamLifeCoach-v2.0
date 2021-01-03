@@ -11,6 +11,7 @@
         {{ link.text }}
       </a>
     </div>
+    <div class="header__burger" />
   </div>
 </template>
 
@@ -50,8 +51,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import 'sass-rem/_rem.scss';
-
 .header {
   position: fixed;
   z-index: 1000;
@@ -74,6 +73,10 @@ export default {
   }
 
   &__menu {
+    @include for-tablet-horizontal {
+      display: none;
+    }
+
     &-link {
       text-decoration: none;
       font-family: Open Sans;
@@ -108,6 +111,19 @@ export default {
       &:last-child {
         margin: 0;
       }
+    }
+  }
+
+  &__burger {
+    display: none;
+    width: rem(20px);
+    height: rem(9px);
+    cursor: pointer;
+    background: url(~@/assets/images/burger.svg?inline) center / contain
+      no-repeat;
+
+    @include for-tablet-horizontal {
+      display: block;
     }
   }
 }

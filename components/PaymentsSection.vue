@@ -89,8 +89,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import 'sass-rem/_rem.scss';
-
 .payments {
   background: #fbfbfb;
   width: 100%;
@@ -99,6 +97,10 @@ export default {
   &__wrapper {
     max-width: rem(1100px);
     margin: 0 auto;
+
+    @include for-tablet-horizontal {
+      width: rem(700px);
+    }
   }
 
   &__title {
@@ -126,6 +128,10 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @include for-tablet-horizontal {
+      flex-wrap: wrap;
+    }
   }
 
   &__block {
@@ -135,6 +141,12 @@ export default {
     box-sizing: border-box;
     padding: rem(25px 44px 35px 25px);
     position: relative;
+
+    @include for-tablet-horizontal {
+      max-width: none;
+      width: 55%;
+      margin: rem(0 auto 50px);
+    }
 
     &-title {
       font-family: Oswald;
