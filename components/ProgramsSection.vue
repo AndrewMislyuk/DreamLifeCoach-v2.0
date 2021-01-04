@@ -175,6 +175,14 @@ export default {
     @include for-tablet-horizontal {
       max-width: rem(700px);
     }
+
+    @include for-mobile-L {
+      max-width: rem(400px);
+    }
+
+    @include for-mobile-L {
+      max-width: rem(350px);
+    }
   }
 
   &__title {
@@ -196,6 +204,11 @@ export default {
       width: rem(45px);
       height: rem(2px);
     }
+
+    @include for-mobile-L {
+      font-size: rem(40px);
+      line-height: rem(40px);
+    }
   }
 
   &__block {
@@ -208,6 +221,12 @@ export default {
       margin: 0 auto;
     }
 
+    @include for-mobile-L {
+      max-width: none;
+      box-sizing: border-box;
+      padding: rem(0 16px 0);
+    }
+
     &-image {
       position: absolute;
       top: 0;
@@ -215,6 +234,11 @@ export default {
       z-index: 10;
       width: rem(400px);
       height: rem(300px);
+
+      @include for-mobile-L {
+        width: rem(340px);
+        height: rem(250px);
+      }
 
       &.--right {
         left: auto;

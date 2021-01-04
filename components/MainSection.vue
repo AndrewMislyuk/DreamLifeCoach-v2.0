@@ -57,6 +57,11 @@ export default {
     letter-spacing: rem(4.608px);
     color: #ffffff;
     text-align: center;
+
+    @include for-mobile-L {
+      font-size: rem(40px);
+      line-height: rem(40px);
+    }
   }
 
   &__suptitle {
@@ -68,6 +73,11 @@ export default {
     line-height: rem(27px);
     letter-spacing: rem(1.28px);
     color: #ffffff;
+
+    @include for-mobile-L {
+      font-size: rem(18px);
+      line-height: rem(20px);
+    }
   }
 
   &__button {

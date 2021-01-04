@@ -65,6 +65,14 @@ export default {
     @include for-tablet-horizontal {
       max-width: rem(700px);
     }
+
+    @include for-mobile-L {
+      max-width: rem(400px);
+    }
+
+    @include for-mobile-M {
+      max-width: rem(350px);
+    }
   }
 
   &__title {
@@ -85,6 +93,11 @@ export default {
       background: #252525;
       bottom: rem(-10px);
       left: 0;
+    }
+
+    @include for-mobile-L {
+      font-size: rem(40px);
+      line-height: rem(40px);
     }
   }
 

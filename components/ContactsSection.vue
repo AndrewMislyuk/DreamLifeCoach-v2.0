@@ -181,6 +181,14 @@ export default {
     @include for-tablet-horizontal {
       max-width: rem(700px);
     }
+
+    @include for-mobile-L {
+      max-width: rem(400px);
+    }
+
+    @include for-mobile-M {
+      max-width: rem(350px);
+    }
   }
 
   &__title {
@@ -201,6 +209,11 @@ export default {
       width: rem(45px);
       height: rem(2px);
     }
+
+    @include for-mobile-L {
+      font-size: rem(40px);
+      line-height: rem(40px);
+    }
   }
 
   &__content {
@@ -213,6 +226,14 @@ export default {
     @include for-tablet-horizontal {
       max-width: rem(700px);
       flex-wrap: wrap;
+    }
+
+    @include for-mobile-L {
+      max-width: rem(400px);
+    }
+
+    @include for-mobile-M {
+      max-width: rem(350px);
     }
   }
 
@@ -228,6 +249,10 @@ export default {
       position: relative;
       margin-bottom: rem(15px);
       width: rem(500px);
+
+      @include for-mobile-L {
+        width: rem(300px);
+      }
 
       .contacts__form-success {
         position: absolute;
@@ -302,6 +327,10 @@ export default {
       width: rem(552px);
       box-sizing: border-box;
 
+      @include for-mobile-L {
+        width: rem(352px);
+      }
+
       &.--wrong {
         border: rem(1px) solid #f81111;
       }
@@ -314,11 +343,19 @@ export default {
     &-phone {
       margin-bottom: rem(15px);
       width: rem(552px);
+
+      @include for-mobile-L {
+        width: rem(352px);
+      }
     }
 
     &-textarea {
       position: relative;
       width: rem(500px);
+
+      @include for-mobile-L {
+        width: rem(300px);
+      }
 
       .contacts__form-success {
         position: absolute;

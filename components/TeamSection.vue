@@ -88,6 +88,10 @@ export default {}
       }
     }
 
+    @include for-mobile-L {
+      display: block;
+    }
+
     &-image {
       position: absolute;
       z-index: 10;
@@ -101,6 +105,10 @@ export default {}
         position: static;
         height: rem(250px);
         margin-right: rem(50px);
+      }
+
+      @include for-mobile-L {
+        margin: rem(0 auto 25px);
       }
     }
 
@@ -127,6 +135,10 @@ export default {}
         position: static;
         padding: 0;
       }
+
+      @include for-mobile-L {
+        margin: 0 auto;
+      }
     }
 
     &-title {
@@ -145,6 +157,10 @@ export default {}
         line-height: rem(57px);
         letter-spacing: rem(2.688px);
         color: #504e4e;
+      }
+
+      @include for-mobile-L {
+        margin-left: rem(50px);
       }
     }
 
@@ -168,6 +184,18 @@ export default {}
         width: rem(20px);
         height: rem(2px);
         background: #353535;
+
+        @include for-mobile-L {
+          display: none;
+        }
+      }
+
+      @include for-mobile-L {
+        max-width: none;
+        width: 100%;
+        box-sizing: border-box;
+        padding: rem(0 16px 0);
+        margin: 0;
       }
     }
 
@@ -185,12 +213,22 @@ export default {}
         position: static;
       }
 
+      @include for-mobile-L {
+        display: flex;
+        flex-direction: column;
+      }
+
       .team__info-image {
         left: 0;
         background: url(~@/assets/images/photo2.png) center / contain no-repeat;
 
         @include for-tablet-horizontal {
           margin: rem(0 0 0 50px);
+        }
+
+        @include for-mobile-L {
+          order: 1;
+          margin: rem(0 auto 25px);
         }
       }
 
@@ -202,6 +240,23 @@ export default {}
         @include for-tablet-horizontal {
           position: static;
           padding: 0;
+        }
+
+        @include for-mobile-L {
+          order: 2;
+          margin: 0;
+        }
+      }
+
+      .team__info-title {
+        @include for-mobile-L {
+          margin-left: rem(50px);
+        }
+      }
+
+      .team__info-text {
+        @include for-mobile-L {
+          margin-left: 0;
         }
       }
     }

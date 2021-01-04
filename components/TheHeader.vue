@@ -63,6 +63,10 @@ export default {
   background: rgba(0, 0, 0, 0.4);
   padding: rem(25px 90px 25px 125px);
 
+  @include for-mobile-L {
+    padding: rem(25px 25px 25px 25px);
+  }
+
   &__logo {
     font-family: Oswald;
     font-style: normal;
