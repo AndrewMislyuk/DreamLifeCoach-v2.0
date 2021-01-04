@@ -106,7 +106,8 @@
             <div class="contacts__info-icon">
               <span class="fas fa-envelope" />
             </div>
-            Почта: ludmila23kr@gmail.com Почта: pochta@gmail.com
+            <!-- Почта: ludmila23kr@gmail.com  -->
+            Почта: pochta@gmail.com
           </div>
         </div>
       </div>
